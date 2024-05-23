@@ -20,6 +20,8 @@ public class Ex2 {
 
         int result4 = div(num1, num2);
         System.out.println("result4 = " + result4);
+
+        scanner.close();
     }
 
     public static int add(int num1, int num2) {
