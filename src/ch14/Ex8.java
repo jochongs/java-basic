@@ -1,0 +1,26 @@
+package ch14;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.nio.file.Paths;
+
+public class Ex8 {
+    public static void main(String[] args) {
+        String inputFilePath = Paths.get("").toAbsolutePath().toString() + "/src/ch14/Ex8.java";
+        String outputFilePath = Paths.get("").toAbsolutePath().toString() + "/src/ch14/Ex8-Copy";
+
+        StringBuilder stringBuilder = new StringBuilder();
+        try (InputStream inputStream = new FileInputStream(inputFilePath)) {
+            FileOutputStream fos = new FileOutputStream(outputFilePath);
+
+            int data;
+            while ((data = inputStream.read()) != -1) {
+                fos.write(data);
+            }
+
+        } catch (Exception err) {
+            err.printStackTrace();
+        }
+    }
+}
